@@ -1,114 +1,37 @@
-<!DOCTYPE HTML>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-	<title>Happy Birthday</title>
-	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-	<style type="text/css">
-		@font-face {
-			font-family: digit;
-			src: url('digital-7_mono.ttf') format("truetype");
-		}
-	</style>
-	<link href="css/default.css" type="text/css" rel="stylesheet">
-	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/garden_dev.js"></script>
-    <script type="text/javascript" src="js/functions_dev.js"></script>
+<title>emmaBday</title>
 </head>
-
 <body>
-	<div id="mainDiv">
-		<div id="content">
-			<div id="code">
-				<span class="comments">/**</span><br />
-				<span class="space"/><span class="comments">* Today, the 17th day of Auguest, is your birthday.</span><br />
-				<span class="space"/><span class="comments">* So I created a page to celebrate this extraordinary day.</span><br />
-				<span class="space"/><span class="comments">* That page will show you a script 'wish.sh'.</span><br />
-				<span class="space"/><span class="comments">*/</span><br />
-				birthday@girl ~ $ >> <span class="keyword">cd love && sh </span> wish.sh(<span class="string">"Emma"</span>);<br />
-				<span class="comments">// Auguest 17th, when the bell rang, your age doesnot increase </span><br />
-				Date currentTime = <span class="keyword">new</span> Date(); <br />
-				SimpleDateFormat formatter = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>);<br />
-				String dateString = formatter.format(currentTime);<br />
-				if( dateString.equals(<span class="string">"2017-08-17 00:00:00"</span>) ){</br>
-					u.age --;</br>
-				}</br>
-				<span class="comments">// O! she doth teach the torches to burn bright</span><br />
-				<span class="comments">// It seems she hangs upon the cheek of night</span><br />
-				<span class="comments">// Like a rich jewel in an Ethiop's ear;</span><br />
-				<span class="comments">// Beauty too rich for use, for earth too dear.</span><br />
 
-				<span class="keyword">new</span> Thread (){<br />
-				@Override </br>
-				<span class="comments">// My love I wish you</span><br />
-				while(true){</br>
-				<span class="comments">// happy,</span><br />
-				u.happiness ++;</br>
-				<span class="comments">// healthy,</span><br />
-				u.health ++;</br>
-				<span class="comments">// steak and chocolate,</span><br />
-				u.food ++;</br>
-			    <span class="comments">// and everything you wish can be achieved.</span><br />
-				}.start()</br>
-				<span class="comments">// The last thing I want say, boring and ordinary, is:</span><br />
-				System.out.println(<span class="string">"Happy Birthday !!!"</span>);
-			</div>
-			<div id="loveHeart">
-				<canvas id="garden"></canvas>
-				<div id="words">
-					<div id="messages">
-					</br>
-					</br>
-					</br>
-					</br>
-					</br>
-					</br>
-						    You defy stars from:
-						<div id="elapseClock"></div>
-					</div>
-					<div id="loveu">
-						"u have a wish<br>
-                         i make it happen”<br/>
-						<div class="signature">- David</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div id="copyright">
-			2018 &copy; SG
-		</div>
-	</div>
-	<script type="text/javascript">
-		var offsetX = $("#loveHeart").width() / 2;
-		var offsetY = $("#loveHeart").height() / 2 - 55;
-		var together = new Date();
-		together.setFullYear(2018,3, 21);
-		together.setHours(8);
-		together.setMinutes(0);
-		together.setSeconds(0);
-		together.setMilliseconds(0);
-		
-		if (!document.createElement('canvas').getContext) {
-			var msg = document.createElement("div");
-			msg.id = "errorMsg";
-			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
-			document.body.appendChild(msg);
-			$("#code").css("display", "none")
-			$("#copyright").css("position", "absolute");
-			$("#copyright").css("bottom", "10px");
-		    document.execCommand("stop");
-		} else {
-			setTimeout(function () {
-				startHeartAnimation();
-			}, 5000);
+<h1><b>Emma happy birthday<b></h1>
+<div>
+<img src="./birthdayIMG.jpg" alt="birthday" width="600" height="900">
+</div>
 
-			timeElapse(together);
-			setInterval(function () {
-				timeElapse(together);
-			}, 500);
+<script type="text/javascript">
+var count = 6;
+var redirect = "show.html";
+ 
+function countDown(){
+    var timer = document.getElementById("timer");
+    if(count > 0){
+        count--;
+        timer.innerHTML = "This page will redirect in "+count+" seconds.";
+        setTimeout("countDown()", 1000);
+    }else{
+        window.location.href = redirect;
+    }
+}
+</script>
+ 
+wait 6 seconds
+<br>
+ 
+<span id="timer">
+<script type="text/javascript">countDown();</script>
+</span>
 
-			adjustCodePosition();
-			$("#code").typewriter();
-		}
-	</script>
 </body>
 </html>
